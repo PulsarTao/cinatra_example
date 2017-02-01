@@ -30,4 +30,5 @@ endmacro()
 
 
 add_example(cinatra_http_example)
+add_example(https_server)
 
