@@ -8,6 +8,7 @@ include_directories(${cinatra_INCLUDES})
 
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 find_package(OpenSSL REQUIRED)
+find_package(mstch REQUIRED)
 
 include_directories(
         ${Boost_INCLUDE_DIR}
@@ -31,4 +32,6 @@ endmacro()
 
 add_example(cinatra_http_example)
 add_example(https_server)
-
+add_example(html_tmpl_mstch)
+target_link_libraries(html_tmpl_mstch mstch::mstch)
+file(COPY html_tmpl_mstch/template DESTINATION .)
