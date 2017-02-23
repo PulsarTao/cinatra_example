@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(cinatra REQUIRED)
 include_directories(${cinatra_INCLUDES})
 
-find_package(Boost REQUIRED COMPONENTS system filesystem)
+find_package(Boost REQUIRED COMPONENTS system filesystem thread)
 find_package(OpenSSL REQUIRED)
 find_package(mstch REQUIRED)
 
@@ -35,3 +35,5 @@ add_example(https_server)
 add_example(html_tmpl_mstch)
 target_link_libraries(html_tmpl_mstch mstch::mstch)
 file(COPY html_tmpl_mstch/template DESTINATION .)
+
+add_example(login_session)
